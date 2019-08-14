@@ -33,7 +33,7 @@ jobs:
           path: build/libs
           destination: jar
      - persist_to_workspace:
-          root: ./test #the folder to start the workspace from.
+          root: . #the folder to start the workspace from.
           paths: 
            - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
 
