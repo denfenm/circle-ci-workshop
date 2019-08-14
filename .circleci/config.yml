@@ -20,8 +20,6 @@ jobs:
           root: test #the folder to start the workspace from.
           paths: 
            - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
-      - attach_workspace:
-           at: /tmp/workspace
 package:
     docker:
      - image: circleci/openjdk:8-jdk
@@ -37,7 +35,7 @@ package:
           root: test #the folder to start the workspace from.
           paths: 
            - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
-      - attach_workspace:
+     - attach_workspace:
            at: /tmp/workspace     
 workflows:
   version: 2
