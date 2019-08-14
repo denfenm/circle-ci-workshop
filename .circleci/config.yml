@@ -15,7 +15,13 @@ jobs:
           name: Run gradle test
           command: gradle test
      - store_test_results:
-          path: build/test-results   
+          path: build/test-results  
+     - persist_to_workspace:
+          root: test #the folder to start the workspace from.
+          paths: 
+           - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
+      - attach_workspace:
+           at: /tmp/workspace
 package:
     docker:
      - image: circleci/openjdk:8-jdk
@@ -27,6 +33,12 @@ package:
      - store_artifacts:
           path: build/libs
           destination: jar
+     - persist_to_workspace:
+          root: test #the folder to start the workspace from.
+          paths: 
+           - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
+      - attach_workspace:
+           at: /tmp/workspace     
 workflows:
   version: 2
   myworkflow:
