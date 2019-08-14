@@ -61,7 +61,7 @@ workflows:
           requires:
            - build
      - dockerize:
-          rezuire:
+          requires:
            - build
      
 
