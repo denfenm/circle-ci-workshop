@@ -2,17 +2,17 @@ version: 2.0
 jobs: 
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+     - image: circleci/openjdk:8-jdk
     steps:
-      - checkout
-      - run:
-	  name: Build project
-	  command: gradle jar
-      - store_artifacts:
+     - checkout
+     - run:
+          name: Build project
+          command: gradle jar
+     - store_artifacts:
           path: build/libs
-	  destination: jar
-      - run:
+          destination: jar
+     - run:
           name: Run gradle test
           command: gradle test
-      - store_test_results:
-	  path: build/test-results    
+     - store_test_results:
+          path: build/test-results    
