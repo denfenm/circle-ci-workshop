@@ -38,9 +38,9 @@ jobs:
            - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
 version: 2
 jobs:
- dockerize:
-   machine: true
-   steps:
+  dockerize:
+    machine: true
+    steps:
      - checkout
      # Login to docker
      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
