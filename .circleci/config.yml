@@ -31,8 +31,8 @@ workflows:
   version: 2
   myworkflow:
     jobs: 
-     - test
+     - build
      - package:
           requires:
-           - test
+           - build
 
