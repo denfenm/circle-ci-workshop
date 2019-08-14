@@ -29,9 +29,9 @@ package:
           destination: jar
 workflows:
   version: 2
-  jobs:
+  myworkflow:
      - test
      - package:
           requires:
-               - test
+           - test
 
