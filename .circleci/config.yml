@@ -39,7 +39,11 @@ jobs:
 version: 2
 jobs:
   dockerize:
-    machine: true
+    machine: true #run jar commands
+    #- run:
+    # name:Dockerizing setup
+    # commands:
+    #     docker
     steps:
      - checkout
      # Login to docker
@@ -56,4 +60,8 @@ workflows:
      - package:
           requires:
            - build
+     - dockerize:
+          rezuire:
+           - build
+     
 
