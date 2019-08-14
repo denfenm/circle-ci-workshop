@@ -15,14 +15,7 @@ jobs:
           name: Run gradle test
           command: gradle test
      - store_test_results:
-          path: build/test-results    
-workflows:
-  version: 2
-  jobs:
-     - test
-     - package
-          requires:
-               - test
+          path: build/test-results   
 package:
   build:
   docker:
@@ -35,4 +28,11 @@ package:
      - store_artifacts:
           path: build/libs
           destination: jar
+workflows:
+  version: 2
+  jobs:
+     - test
+     - package
+          requires:
+               - test
 
