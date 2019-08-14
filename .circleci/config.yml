@@ -22,7 +22,7 @@ workflows:
      - test
      - package
           requires:
-             - test
+               - test
 package:
   build:
   docker:
