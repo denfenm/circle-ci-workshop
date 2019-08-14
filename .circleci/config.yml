@@ -20,7 +20,7 @@ jobs:
           root: . #working directory
           paths: 
            - . #if you want all of test to be persisted in the workspace. Note: Do not use both path examples, since `1` is also in `.` path
-package:
+  package:
     docker:
      - image: circleci/openjdk:8-jdk
     steps:
@@ -39,7 +39,7 @@ package:
 
 workflows:
   version: 2
-  myworkflow:
+  myworkflows:
     jobs: 
      - build
      - package:
