@@ -30,6 +30,7 @@ package:
 workflows:
   version: 2
   myworkflow:
+    jobs: 
      - test
      - package:
           requires:
